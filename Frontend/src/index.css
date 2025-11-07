@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme{
+    --font-abhaya: Abhaya,"sans-serif";
+    --font-inter: Inter,"sans-serif";
+    --color-dorado: #c0a064;
+    --color-dorado-oscuro: #90784B;
+    --color-dorado-muy-oscuro: #C0A06440;
+    --color-gris: #C4BFC9;
+}
