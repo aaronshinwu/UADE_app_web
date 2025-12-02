@@ -6,6 +6,8 @@ export function MensajesAdmin() {
   const [mensajes, setMensajes] = useState([]);
   const navigate = useNavigate();
 
+  const API = import.meta.env.VITE_API_URL;
+
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
@@ -17,12 +19,9 @@ export function MensajesAdmin() {
     if (!token) return navigate("/admin/login");
 
     try {
-      const res = await axios.get(
-        "http://127.0.0.1:8000/api/Mensajes/admin/",
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      const res = await axios.get(`${API}/api/Mensajes/admin/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       const data = res.data.data ? res.data.data : [];
       setMensajes(data);
@@ -42,7 +41,7 @@ export function MensajesAdmin() {
 
     try {
       const token = localStorage.getItem("accessToken");
-      await axios.delete(`http://127.0.0.1:8000/api/Mensajes/${id}/`, {
+      await axios.delete(`${API}/api/Mensajes/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

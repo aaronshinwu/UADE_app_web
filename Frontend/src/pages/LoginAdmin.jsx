@@ -21,7 +21,9 @@ export function LoginAdmin() {
   const onSubmit = async (data) => {
     setLoginError("");
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/token-admin/", {
+      const API = import.meta.env.VITE_API_URL;
+
+      const res = await axios.post(`${API}/api/token-admin/`, {
         username: data.username,
         password: data.password,
       });

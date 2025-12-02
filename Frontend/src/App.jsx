@@ -9,7 +9,7 @@ import { Contacto } from "./pages/Contacto";
 // Rutas admin
 import { AdminLayout } from './layouts/AdminLayout';
 import { LoginAdmin } from './pages/LoginAdmin';
-import { MensajesAdmin } from './layouts/MensajesAdmin';
+import { MensajesAdmin } from './pages/MensajesAdmin';
 
 function App() {
   return (

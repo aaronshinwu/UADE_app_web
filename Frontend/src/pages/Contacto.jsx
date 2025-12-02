@@ -20,6 +20,8 @@ export const Contacto = () => {
 
   const onSubmit = async (data) => {
     try {
+      const API = import.meta.env.VITE_API_URL;
+
       const payload = {
         persona: {
           nombre: data.nombre,
@@ -30,7 +32,7 @@ export const Contacto = () => {
         mensaje: data.mensaje
       };
 
-      const res = await axios.post("http://127.0.0.1:8000/api/Mensajes/", payload);
+      const res = await axios.post(`${API}/api/Mensajes/`, payload);
 
       console.log("Mensaje enviado:", res.data);
       alert("Mensaje enviado correctamente!");
